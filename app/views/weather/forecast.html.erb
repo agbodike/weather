@@ -1,2 +1,12 @@
-<h1>Weather#forecast</h1>
-<p>Find me in app/views/weather/forecast.html.erb</p>
+<h2>Weather Forecast for <%= @address %></h2>
+
+<h4>Current Temperature</h4>
+<h1><%= @weather_data['current_temp'].round %>°F</h1>
+<p>Feels like: <strong><%= @weather_data['feels_like'].round %>°F</strong></p>
+
+<p>Humidity: <strong><%= @weather_data['humidity'] %>%</strong></p>
+
+<h4>Temperature Range: </h4>
+<p>Low: <strong><%= @weather_data['temp_min'].round %>°F</strong> | High: <strong><%= @weather_data['temp_max'].round %>°F</strong></p>
+
+<%= link_to "Search Again", weather_index_path %>

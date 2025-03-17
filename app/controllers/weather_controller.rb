@@ -4,12 +4,15 @@ class WeatherController < ApplicationController
 
   def forecast
     @address = params[:address]
-    @weather_data = {
-      "current_temp" => 78,
-      "temp_min"     => 56,
-      "temp_max"     => 85,
-      "feels_like"   => 79,
-      "humidity"     => 73
-    }
+    zipcode = extract_zipcode
+    cached_data = WeatherDatum.where(zipcode: zipcode).first
+    @weather_data = JSON.parse cached_data.data
+  end
+
+  private
+
+  def extract_zipcode
+    zipcode_match = @address.match(/\b\d{5}\b/)
+    zipcode_match[0] if zipcode_match
   end
 end

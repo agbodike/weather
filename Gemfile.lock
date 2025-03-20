@@ -101,7 +101,6 @@ GEM
       bigdecimal
       rexml
     crass (1.0.6)
-    csv (3.3.2)
     date (3.4.1)
     debug (1.10.0)
       irb (~> 1.10)
@@ -123,9 +122,6 @@ GEM
       multipart-post (~> 2.0)
     faraday-net_http (3.4.0)
       net-http (>= 0.5.0)
-    geocoder (1.8.5)
-      base64 (>= 0.1.0)
-      csv (>= 3.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashdiff (1.1.2)
@@ -360,7 +356,6 @@ DEPENDENCIES
   error_highlight (>= 0.4.0)
   factory_bot_rails
   faraday
-  geocoder
   importmap-rails
   jbuilder
   open-weather-ruby-client

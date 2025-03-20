@@ -5,11 +5,9 @@ class WeatherController < ApplicationController
   def forecast
     @address = params[:address]
     zipcode = extract_zipcode
-    cached_data = WeatherDatum.where(zipcode: zipcode).first
+    @weather_data = get_forecast(zipcode).first
 
     lat_lon = get_lat_lon
-
-    @weather_data = JSON.parse cached_data.data if cached_data
   end
 
   private
@@ -31,5 +29,15 @@ class WeatherController < ApplicationController
   def extract_zipcode
     zipcode_match = @address.match(/\b\d{5}\b/)
     zipcode_match[0] if zipcode_match
+  end
+
+  def get_forecast(zipcode)
+    cached_data = WeatherDatum.get_by_zipcode(zipcode)
+    if cached_data
+      [ JSON.parse(cached_data.data), true ] # Return data and cached_data indicator
+    else
+      data = OpenWeatherClient.current_weather(city: zipcode, units: "imperial").main.to_hash
+      [ data, false ] # No valid cached_data found
+    end
   end
 end

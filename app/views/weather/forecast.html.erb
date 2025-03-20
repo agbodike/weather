@@ -1,7 +1,7 @@
 <h2>Weather Forecast for <%= @address %></h2>
 
 <h4>Current Temperature</h4>
-<h1><%= @weather_data['current_temp'].round %>°F</h1>
+<h1><%= @weather_data['temp'].round %>°F</h1>
 <p>Feels like: <strong><%= @weather_data['feels_like'].round %>°F</strong></p>
 
 <p>Humidity: <strong><%= @weather_data['humidity'] %>%</strong></p>

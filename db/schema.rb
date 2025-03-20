@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_17_203526) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_19_235214) do
   create_table "weather_data", force: :cascade do |t|
     t.string "zipcode"
     t.text "data"
-    t.datetime "expires_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -32,7 +32,8 @@ gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-gem 'geocoder'
+gem "geocoder"
+gem "open-weather-ruby-client"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -45,7 +46,7 @@ group :development, :test do
   gem "brakeman", require: false
 
   gem "rspec"
-  gem "rspec-rails", '~> 7.0.0'
+  gem "rspec-rails", "~> 7.0.0"
   gem "factory_bot_rails"
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
@@ -64,6 +65,10 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-  gem 'shoulda-matchers', '~> 6.0'
+  gem "shoulda-matchers", "~> 6.0"
   gem "webmock"
+  gem "pry"                 # Call `binding.pry` to get a debugger console
+  gem "pry-byebug"
+  gem "pry-rails"
+
 end

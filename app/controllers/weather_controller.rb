@@ -10,7 +10,7 @@ class WeatherController < ApplicationController
       redirect_to weather_index_path
       return
     end
-    @weather_data = get_forecast(zipcode).first
+    @weather_data, @from_cache = get_forecast(zipcode)
   end
 
   private
@@ -26,6 +26,7 @@ class WeatherController < ApplicationController
       [ JSON.parse(cached_data.data), true ] # Return data and cached_data indicator
     else
       data = OpenWeatherClient.current_weather(city: zipcode, units: "imperial").main.to_hash
+      WeatherDatum.create(zipcode: zipcode, data: data.to_json)
       [ data, false ] # No valid cached_data found
     end
   end

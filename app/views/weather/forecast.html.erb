@@ -10,3 +10,11 @@
 <p>Low: <strong><%= @weather_data['temp_min'].round %>°F</strong> | High: <strong><%= @weather_data['temp_max'].round %>°F</strong></p>
 
 <%= link_to "Search Again", weather_index_path %>
+
+<div>
+  <% if @from_cache %>
+    Data retrieved from cache.
+  <% else %>
+    Fresh Data
+  <% end %>
+</div>

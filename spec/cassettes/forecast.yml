@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=dummy_key&q=06511&units=imperial
+      # uri: https://api.openweathermap.org/data/2.5/weather?appid=hfislhrsli&q=06511&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Content-Type:
+      - application/json
+      User-Agent:
+      - OpenWeather Ruby Client/0.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Thu, 20 Mar 2025 23:46:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?q=06511&units=imperial"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-72.9251,"lat":41.3082},"weather":[{"id":701,"main":"Mist","description":"mist","icon":"50n"}],"base":"stations","main":{"temp":45.03,"feels_like":39.34,"temp_min":43.32,"temp_max":47.43,"pressure":1001,"humidity":95,"sea_level":1001,"grnd_level":995},"visibility":1207,"wind":{"speed":11.5,"deg":110},"clouds":{"all":100},"dt":1742514394,"sys":{"type":2,"id":2017948,"country":"US","sunrise":1742468081,"sunset":1742511808},"timezone":-14400,"id":4839366,"name":"New
+        Haven","cod":200}'
+  recorded_at: Thu, 20 Mar 2025 23:46:34 GMT
+recorded_with: VCR 6.3.1

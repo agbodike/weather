@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "weather/index.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "prompts the user to enter address" do
+    render
+    expect(rendered).to match(/Enter Street Address/)
+  end
 end

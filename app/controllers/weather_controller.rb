@@ -6,7 +6,7 @@ class WeatherController < ApplicationController
     @address = params[:address]
     zipcode = extract_zipcode
     unless zipcode
-      flash[:alert] = "Could not find valid zipcode for that address"
+      flash[:alert] = "Zipcode is required with the address"
       redirect_to weather_index_path
       return
     end
